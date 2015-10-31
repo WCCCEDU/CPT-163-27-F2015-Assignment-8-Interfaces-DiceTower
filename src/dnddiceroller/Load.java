@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author Zachary
  */
-public class Load extends Die{
+public class Load implements Die{
     private int sideOfDie;
     private int valueOfDie;
     
@@ -32,5 +32,15 @@ public class Load extends Die{
             this.valueOfDie=rand1.nextInt(this.sideOfDie)+1;///loop to repated
         }
         return this.sideOfDie;
+    }
+
+    @Override
+    public int rollDice() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getValue() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

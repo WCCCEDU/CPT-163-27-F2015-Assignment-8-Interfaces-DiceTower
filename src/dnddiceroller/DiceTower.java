@@ -21,6 +21,8 @@ public class DiceTower {
   private int trayValue;
   private List<Fudge> fudgeDice;
   
+  
+  //constructor for array list
   public DiceTower() {
 	this.numberedDice = new ArrayList();
         this.loadDice=new ArrayList();
@@ -28,6 +30,9 @@ public class DiceTower {
         
   }
   
+  
+  
+  //for loop in this
   public void dropDice(){
       for(int i=0; i<this.numberedDice.size();i++){
           this.numberedDice.get(i).roll();
@@ -35,6 +40,7 @@ public class DiceTower {
           
   }
   
+  //consturctor for variables out of array list function
   public DiceTower(List dice) {
 	this.numberedDice = numberedDice;
         this.loadDice=loadDice;
@@ -42,6 +48,8 @@ public class DiceTower {
         
   }
   
+  
+  //this will retunr the value of trayValue
   public int getTrayValue(){
       return trayValue;
   }
