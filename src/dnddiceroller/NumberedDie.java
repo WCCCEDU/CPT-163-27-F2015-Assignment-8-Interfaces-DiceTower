@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author Zachary
  */
-public class NumberedDie implements Die{
+public  class NumberedDie extends Die{
     private int valueOfDie;
     private int sideOfDie;
     

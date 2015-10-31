@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author Zachary
  */
-public class Fudge implements Die {
+public class Fudge extends Die {
        private int sideOfDie;
     private int valueOfDie;
     

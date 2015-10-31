@@ -12,7 +12,8 @@ public class Die {
     /**
      *
      */
-    public Interface Die{
+   
+    public  Interface Die{
         
     public int rollDice(); //variable for rolling
      public int getValue(); //to get value from
