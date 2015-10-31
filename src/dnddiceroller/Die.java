@@ -8,5 +8,9 @@ package dnddiceroller;
  * @author Paul Scarrone
  */
 public class Die {
-  
+    public Interface Die{
+        
+    public int rollDice(); //variable for rolling
+     public int getValue(); //to get value from
+    }
 }
