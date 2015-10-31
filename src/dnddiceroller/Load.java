@@ -17,7 +17,7 @@ public class Load implements Die{
     
     
     public int getvaleOfDie(){
-        return valueOfDie;s
+        return valueOfDie;
         
     }
     

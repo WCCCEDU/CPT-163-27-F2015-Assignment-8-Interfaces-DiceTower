@@ -16,13 +16,37 @@ import java.util.List;
  */
 public class DiceTower {
   final int PANEL_COUNT = 3;
-  List<Die> dice;
-
+  private List<NumberedDie> numberedDice;
+  private List<Load> loadDice;
+  private int trayValue;
+  private List<Fudge> fudgeDice;
+  
   public DiceTower() {
-	this.dice = new ArrayList();
+	this.numberedDice = new ArrayList();
+        this.loadDice=new ArrayList();
+        this.fudgeDice=new ArrayList();
+        
+  }
+  
+  public void dropDice(){
+      for(int i=0; i<this.numberedDice.size();i++){
+          this.numberedDice.get(i).roll();
+      }
+          
   }
   
   public DiceTower(List dice) {
-	this.dice = dice;
+	this.numberedDice = numberedDice;
+        this.loadDice=loadDice;
+        this.fudgeDice=fudgeDice;
+        
   }
-}
+  
+  public int getTrayValue(){
+      return trayValue;
+  }
+  
+  
+  }
+  
+  
