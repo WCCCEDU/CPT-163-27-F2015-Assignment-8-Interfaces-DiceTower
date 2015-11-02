@@ -19,7 +19,8 @@ public class Dnddiceroller {
 	  if(tower != -1){
 		System.out.println("Tower Test Failed with Value: " + tower);
 	  }
-	}
+        }
+        
     }
     
       public static int test_oneD6(){
