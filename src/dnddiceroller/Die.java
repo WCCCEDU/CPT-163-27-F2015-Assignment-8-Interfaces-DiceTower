@@ -1,3 +1,8 @@
+/*
+ * CPT 163_27 Java Programming 1
+ * Westmoreland County Community College
+ * Assignment 8 Die Interface
+ */
 package dnddiceroller;
 
 /**
@@ -6,7 +11,9 @@ package dnddiceroller;
  * the numbers 1-6 on them. Some dice are 20 sided with the numbers 1-20 on them.
  * Others are called fudge dice and have the values of -1 0 or +1
  * @author Paul Scarrone
+ * @author garyanewsome
  */
-public class Die {
-  
+public interface Die {
+  public void roll();
+  public int getValue();
 }

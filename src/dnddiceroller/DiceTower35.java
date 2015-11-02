@@ -15,18 +15,18 @@ import java.util.List;
  *
  * @author Paul Scarrone
  */
-public class DiceTower {
+public class DiceTower35 { // copypasta!
 
-    private final int PANEL_COUNT = 3;    // holds the number of panels in the dice tower
+    private final int PANEL_COUNT = 5;    // holds the number of panels in the dice tower
     private List<NumberedDie> dice;               //
     private int trayValue;
 
-    public DiceTower() {
+    public DiceTower35() {
         this.dice = new ArrayList(); // 
         this.trayValue = 0;
     }
 
-    public DiceTower(List dice) {
+    public DiceTower35(List dice) {
         this.dice = dice; // 
         this.trayValue = 0;
     }
@@ -35,7 +35,7 @@ public class DiceTower {
         return this.trayValue;
     }
 
-    public void dropDice() {
+    public void dropDice35() {
         // call roll method from Die.java class
         // roll dice three times to simulate 3 paneled dice tower
         for (int panels = 0; panels < PANEL_COUNT; panels++) {
@@ -49,7 +49,7 @@ public class DiceTower {
             this.trayValue += die.getValue();
         });
 
-    } // end dropDice
+    } // end dropDice35
 
-} // end DiceTower.java
+} // end DiceTower35.java
 
