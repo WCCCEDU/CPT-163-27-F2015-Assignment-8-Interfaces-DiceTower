@@ -75,11 +75,7 @@ public class DiceTower {
             // roll the dice the number of panels in the tower, PANEL_COUNT
             for (int j = 0; j < PANEL_COUNT; j++)
                 this.dice.get(i).roll();
-            
-            /*
-            NumberedDie thisDice = new NumberedDie(0);
-            thisDice = this.dice.get(i);
-            */
+           
             /**
              * I am using the instanceof Operator to determine the class
              * of a an object in the dice array
