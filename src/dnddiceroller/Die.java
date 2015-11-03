@@ -1,24 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dnddiceroller;
 
 /**
- *
- * @author Home pc
+ * A Die is a many sided object that when rolled provides a random value from
+ * 1 through the number of sides on the object. Some dice are 6 sided and have
+ * the numbers 1-6 on them. Some dice are 20 sided with the numbers 1-20 on them.
+ * Others are called fudge dice and have the values of -1 0 or +1
+ * @author Paul Scarrone
  */
-public class Die extends NumberedDie{
-   
-    public Die(int die) {
-        super(die);
-        Fudge fudge = new Fudge(die,die,die, die);
-        Loaded loaded = new Loaded(die,die);
-    }
-
-
-    
-    
+public class Die {
+  
 }
-

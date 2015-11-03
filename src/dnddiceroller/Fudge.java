@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author Home pc
  */
-class Fudge {
+class Fudge extends NumberedDie {
     private int fudgeValues;
     private Random fudge = new Random();
     public Fudge(int die,int fudgeValues,int roll,int value) {

@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author Home pc
  */
-class Loaded {
+class Loaded extends NumberedDie {
     private int loadedValues;
     private Random loaded = new Random();
     public Loaded(int die,int loadedValue ) {
@@ -37,6 +37,16 @@ class Loaded {
     }
 
     private void value() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public NumberedDie <error>(int die) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int value() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
