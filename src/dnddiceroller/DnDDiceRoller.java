@@ -27,27 +27,29 @@ public class DnDDiceRoller {
   }
   
   public static int test_oneD6(){
-	Die die = new Die(6);
-	die.roll();
-	int dieValue = die.value();
+	NumberedDie die = new NumberedDie(6);
+	die.roll();//method
+	int dieValue = die.getvalueOfDie(); 
 	if(dieValue >= 1 && dieValue <= 6){
 	  return -1; // Means the die value is outside its bounds for a d6
 	}else{
 	  return dieValue;
 	}
+        
+
   }
   
   public static int test_diceTowerWithTwoD6(){
-	List<Die> dice = new ArrayList();
-	dice.add(new Die(6));
-	dice.add(new Die(6));
-	DiceTower tower = DiceTower(dice);
-	tower.dropDice();
-	int trayValue = tower.trayValue();
+	List<NumberedDie> dice = new ArrayList();//declaring an array list
+	dice.add(new NumberedDie(6));
+	dice.add(new NumberedDie(6));
+	DiceTower tower = new DiceTower(dice);//new dicetower value to dice
+	tower.dropDice();//drop dice method access class
+	int trayValue = tower.getTrayValue();//getting the valye of tray
 	if(trayValue >= 2 && trayValue <= 12){
 	  return -1; // means the die value is outside the bounds of 2 d6
 	}else{
-	  return trayValue;
+	  return trayValue; //return the value of trayvalue if if statement is false. else
 	}
   }
   
