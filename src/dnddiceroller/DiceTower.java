@@ -25,4 +25,23 @@ public class DiceTower {
   public DiceTower(List dice) {
 	this.dice = dice;
   }
+
+  public void dropDice() {
+        for (int i = 0; i < PANEL_COUNT; i++) {
+            for (int j = 0; j < dice.size(); j++) {
+                Die temp = dice.get(j);
+                temp.roll();
+            }
+        }
+    }
+
+  public int trayValue() {
+      int totalValue = 0;
+      for (int i = 0; i < dice.size(); i++) {
+          Die temp = dice.get(i);
+          totalValue = totalValue + temp.value();
+          
+      }
+      return totalValue;
+    }
 }
