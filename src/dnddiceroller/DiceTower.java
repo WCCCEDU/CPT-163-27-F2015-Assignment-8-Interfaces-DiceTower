@@ -16,35 +16,25 @@ import java.util.List;
  */
 public class DiceTower {
   final int PANEL_COUNT = 3;
-  private List<NumberedDie> numberedDice;
-  private List<Load> loadDice;
   private int trayValue;
-  private List<Fudge> fudgeDice;
-  
+  private List<Die> dice;
   
   //constructor for array list
-  public DiceTower() {
-	this.numberedDice = new ArrayList();
-        this.loadDice=new ArrayList();
-        this.fudgeDice=new ArrayList();
-        
-  }
+
   
-  
+
   
   //for loop in this
   public void dropDice(){
-      for(int i=0; i<this.numberedDice.size();i++){
-          this.numberedDice.get(i).roll();
+      for(int i=0; i<this.dice.size();i++){
+          this.dice.get(i).rollDice();
       }
           
   }
   
   //consturctor for variables out of array list function
   public DiceTower(List dice) {
-	this.numberedDice = numberedDice;
-        this.loadDice=loadDice;
-        this.fudgeDice=fudgeDice;
+	this.dice=dice;
         
   }
   

@@ -12,9 +12,8 @@ import java.util.Random;
  * @author Zachary
  */
 public class Fudge implements Die {
-       private int sideOfDie;
+    private int sideOfDie;
     private int valueOfDie;
-    
     
     public int getvaleOfDie(){
         return valueOfDie;
