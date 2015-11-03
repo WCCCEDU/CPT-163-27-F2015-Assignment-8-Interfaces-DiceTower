@@ -5,20 +5,50 @@
  */
 package dnddiceroller;
 
+import java.util.Random;
+
 /**
  *
  * @author Inspiron
  */
 public class LoadedDice implements Die{
-
+    private final int WEIGHT = 2;
+    private int die;
+    private int value;
+    private int loadedValue;
+    private Random randValue = new Random();
+    public LoadedDice(int die){
+        this.die = die;
+        this.loadedValue = die;
+    }
+    
+    public LoadedDice(int die, int loadedValue){
+        this.die = die;
+        this.loadedValue = loadedValue;
+    }
+    
     @Override
     public void roll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int tempValue = 0;
+        for (int i = 0; i < WEIGHT && this.value != loadedValue; i++) {
+            tempValue = randValue.nextInt(die)+1;
+            if (tempValue == loadedValue){
+                this.value = tempValue;
+            }
+            
+        }
+        
+        if (this.value != loadedValue){
+            this.value = tempValue;
+        }
+        
+        
+        
     }
 
     @Override
     public int value() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      return this.value;
     }
     
 }

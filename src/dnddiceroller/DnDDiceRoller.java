@@ -15,22 +15,31 @@ public class DnDDiceRoller {
    */
   public static void main(String[] args) {
 	for(int i = 0; i< 1000; i++){
-	  int d6 = test_oneD6();
-          //System.out.println("d6: " + d6);
+//	  int d6 = test_oneD6();
+//          //System.out.println("d6: " + d6);
+//          
+//	  if(d6 != -1){
+//		System.out.println("Die Test Succeeded with Value: " + d6);
+//	  }
+//          else
+//               System.out.println("Die Test failed!");
+//	  int tower = test_diceTowerWithTwoD6();
+//          //System.out.println("tower: " + tower);
+//          
+//	  if(tower != -1){
+//		System.out.println("Tower Test Succeeded with Value: " + tower);
+//	  }
+//          else
+//               System.out.println("Tower Test failed!");
           
-	  if(d6 != -1){
-		System.out.println("Die Test Succeeded with Value: " + d6);
-	  }
-          else
-               System.out.println("Die Test failed!");
-	  int tower = test_diceTowerWithTwoD6();
-          //System.out.println("tower: " + tower);
+          List<Die> dice = new ArrayList();
+          dice.add(new LoadedDice(6,1));
+          dice.add(new FudgeDice(6));
+          dice.add(new FudgeDice(6));
           
-	  if(tower != -1){
-		System.out.println("Tower Test Succeeded with Value: " + tower);
-	  }
-          else
-               System.out.println("Tower Test failed!");
+          DiceTower dTower = new DiceTower(dice);
+          dTower.dropDice();
+          System.out.println(dTower.trayValue());
 	}
   }
   

@@ -9,7 +9,9 @@ package dnddiceroller;
  *
  * @author Inspiron
  */
-public interface Die {
+public abstract interface Die {
+    
     void roll();
     int value();
+    
 }

@@ -9,7 +9,7 @@ import java.util.Random;
  * Others are called fudge dice and have the values of -1 0 or +1
  * @author Paul Scarrone
  */
-public class NumberedDie {
+public class NumberedDie implements Die{
     private int die;
     private int value;
     private Random dieSide = new Random();
@@ -24,7 +24,7 @@ public class NumberedDie {
         //System.out.println(value);
     }
 
-    public int value() {
+    public int value(){
         return this.value;
     }
 }

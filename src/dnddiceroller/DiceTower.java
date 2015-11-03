@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class DiceTower {
   final int PANEL_COUNT = 3;
-  List<NumberedDie> dice;
+  List<Die> dice;
 
   public DiceTower() {
 	this.dice = new ArrayList();
@@ -29,7 +29,7 @@ public class DiceTower {
   public void dropDice() {
         for (int i = 0; i < PANEL_COUNT; i++) {
             for (int j = 0; j < dice.size(); j++) {
-                NumberedDie temp = dice.get(j);
+                Die temp = dice.get(j);
                 temp.roll();
             }
         }
@@ -38,7 +38,7 @@ public class DiceTower {
   public int trayValue() {
       int totalValue = 0;
       for (int i = 0; i < dice.size(); i++) {
-          NumberedDie temp = dice.get(i);
+          Die temp = dice.get(i);
           totalValue = totalValue + temp.value();
           
       }

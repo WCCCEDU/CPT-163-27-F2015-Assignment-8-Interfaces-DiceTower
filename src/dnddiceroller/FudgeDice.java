@@ -5,20 +5,29 @@
  */
 package dnddiceroller;
 
+import java.util.Random;
+
 /**
  *
  * @author Inspiron
  */
 public class FudgeDice implements Die{
-
+    private int die;
+    private int value;
+    private Random FudgeRand = new Random();
+    public FudgeDice(int die){
+        this.die = die;
+    }
+        
+    
     @Override
     public void roll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       this.value = FudgeRand.nextInt(3)-1;
     }
 
     @Override
     public int value() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.value;
     }
     
 }
