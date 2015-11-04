@@ -3,6 +3,7 @@ package dnddiceroller;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Dice Tower.
  * A Dice Tower is a tool used by serious gamers use to roll many dice at once.
@@ -13,16 +14,72 @@ import java.util.List;
  * A dice tower will accept a collection of dice and reports their results when
  * they reach the tray at the bottom
  * @author Paul Scarrone
+ * @author Katrina Siffrinn
  */
 public class DiceTower {
+       
+  //fields
   final int PANEL_COUNT = 3;
-  List<Die> dice;
+  private List<NumberedDie> numberedDice;
+  private List <Fudge> fudgeDice;
+  private List <Loaded> loadedDice;
+  private int trayValue = 0;
 
-  public DiceTower() {
-	this.dice = new ArrayList();
+ 
+   //constructors accept values for fields. 
+    public DiceTower() {
+        this.numberedDice = new ArrayList();
+        this.fudgeDice = new ArrayList();
+        this.loadedDice = new ArrayList();
+      }
+  
+    /**
+     * 
+     * @param Dice 
+     */
+  public DiceTower(List Dice) {
+        this.numberedDice = numberedDice;
+        this.fudgeDice = fudgeDice; 
+        this.loadedDice = loadedDice;
+      
+  }
+  /**
+   * accessors return values to fields.
+   * @return the value of trayValue.
+   */
+  
+  public int getTrayValue(){
+      return trayValue;
   }
   
-  public DiceTower(List dice) {
-	this.dice = dice;
+  //dropDice method simulates die being dropped into a dice tower.
+  public void dropDice(){
+      int i = 0;
+      for(NumberedDie die : numberedDice){
+             for(int num = 0; num < PANEL_COUNT; num++){
+             numberedDice.get(i).roll();
+         } 
+    //get value of dice in dice tower tray at exit
+         trayValue += numberedDice.get(i).getValue();
+            i++;
+      }
+      int x = 0;
+      for(Fudge die : fudgeDice){
+             for(int num = 0; num< PANEL_COUNT; num++){
+             fudgeDice.get(x).roll();
+         } 
+    //get value of dice in dice tower tray at exit
+         trayValue += fudgeDice.get(x).getValue();
+            x++;
+  }
+    int z = 0;
+      for(Loaded die : loadedDice){
+             for(int num = 0; num < PANEL_COUNT; num++){
+             loadedDice.get(z).roll();
+         } 
+    //get value of dice in dice tower tray at exit
+         trayValue += loadedDice.get(z).getValue();
+            z++;
+      }
   }
 }
