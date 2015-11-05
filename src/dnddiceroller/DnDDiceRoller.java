@@ -39,7 +39,7 @@ public class DnDDiceRoller {
   }
   
   public static int test_diceTowerWithTwoD6(){
-	List<NumberedDie> dice = new ArrayList();
+	List<Die> dice = new ArrayList();
 	dice.add(new NumberedDie(6));
 	dice.add(new NumberedDie(6));
 	DiceTower tower = new DiceTower(dice);
