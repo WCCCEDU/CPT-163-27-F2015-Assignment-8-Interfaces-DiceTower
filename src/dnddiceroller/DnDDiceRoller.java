@@ -27,9 +27,9 @@ public class DnDDiceRoller {
   }
   
   public static int test_oneD6(){
-	Die die = new Die(6);
+	NumberedDie die = new NumberedDie(6);
 	die.roll();
-	int dieValue = die.value();
+	int dieValue = (int) die.getValue();
 	if(dieValue >= 1 && dieValue <= 6){
 	  return -1; // Means the die value is outside its bounds for a d6
 	}else{
@@ -38,12 +38,12 @@ public class DnDDiceRoller {
   }
   
   public static int test_diceTowerWithTwoD6(){
-	List<Die> dice = new ArrayList();
-	dice.add(new Die(6));
-	dice.add(new Die(6));
-	DiceTower tower = DiceTower(dice);
+	List<NumberedDie> dice = new ArrayList();
+	dice.add(new NumberedDie(6));
+	dice.add(new NumberedDie(6));
+	DiceTower tower = new DiceTower(dice);
 	tower.dropDice();
-	int trayValue = tower.trayValue();
+	int trayValue = tower.getDieSum();
 	if(trayValue >= 2 && trayValue <= 12){
 	  return -1; // means the die value is outside the bounds of 2 d6
 	}else{
