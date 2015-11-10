@@ -19,67 +19,42 @@ import java.util.List;
 public class DiceTower {
        
   //fields
-  final int PANEL_COUNT = 3;
-  private List<NumberedDie> numberedDice;
-  private List <Fudge> fudgeDice;
-  private List <Loaded> loadedDice;
-  private int trayValue = 0;
+  private final int PANEL_COUNT = 3;
+  private final List<NumberedDie> dice;
+  private int trayValue;
 
  
    //constructors accept values for fields. 
     public DiceTower() {
-        this.numberedDice = new ArrayList();
-        this.fudgeDice = new ArrayList();
-        this.loadedDice = new ArrayList();
-      }
+        this.dice = new ArrayList();
+        this.trayValue = 0;
+   }
   
     /**
      * 
-     * @param Dice 
+     * @param dice 
      */
-  public DiceTower(List Dice) {
-        this.numberedDice = numberedDice;
-        this.fudgeDice = fudgeDice; 
-        this.loadedDice = loadedDice;
-      
+    public DiceTower(List dice) {
+        this.dice = dice;
+        this.trayValue = 0;
   }
   /**
    * accessors return values to fields.
    * @return the value of trayValue.
    */
-  
-  public int getTrayValue(){
-      return trayValue;
+    public int getTrayValue(){
+      return this.trayValue;
   }
   
   //dropDice method simulates die being dropped into a dice tower.
   public void dropDice(){
       int i = 0;
-      for(NumberedDie die : numberedDice){
-             for(int num = 0; num < PANEL_COUNT; num++){
-             numberedDice.get(i).roll();
-         } 
-    //get value of dice in dice tower tray at exit
-         trayValue += numberedDice.get(i).getValue();
-            i++;
-      }
-      int x = 0;
-      for(Fudge die : fudgeDice){
-             for(int num = 0; num< PANEL_COUNT; num++){
-             fudgeDice.get(x).roll();
-         } 
-    //get value of dice in dice tower tray at exit
-         trayValue += fudgeDice.get(x).getValue();
-            x++;
-  }
-    int z = 0;
-      for(Loaded die : loadedDice){
-             for(int num = 0; num < PANEL_COUNT; num++){
-             loadedDice.get(z).roll();
-         } 
-    //get value of dice in dice tower tray at exit
-         trayValue += loadedDice.get(z).getValue();
-            z++;
+      for(NumberedDie die : dice){
+             dice.stream().forEach((_item)-> {
+                 die.roll();
+            }); 
+             trayValue += dice.get(i).getValue();
+             i++;
       }
   }
 }

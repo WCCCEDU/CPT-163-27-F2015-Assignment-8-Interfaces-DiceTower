@@ -9,18 +9,25 @@ import java.util.Random;
 public class NumberedDie implements Die{
     
     //fields
-    final private int numSides;
+    final private int sides;
     private int value;
 
 /**
  * the constructor,  performs initial roll of the die.
- * @param numSides is the number of sides for this die.
+ * @param sides is the number of sides for this die.
  */
-    public NumberedDie(int numSides){
-        this.numSides = numSides;
+    public NumberedDie(int sides){
+        this.sides = sides;
        
-}
+    }
+
+    @Override
+    public int getValue() {
+        return this.value;
+    }    
+
     //the roll method simulates the rolling of the die.
+ 
     @Override
       public void roll(){
         
@@ -28,15 +35,9 @@ public class NumberedDie implements Die{
         Random rand = new Random();
 
         //get a random value for this die.
-        this.value = rand.nextInt(this.numSides) +1;
-}
-    /**
-     * allow value to be accessed by the DiceTower.
-     * @return the value of variable value.
-     */
-    @Override
-        public int getValue(){
-            return this.value;
+        this.value = rand.nextInt(this.sides) +1;
+
+   
         }
 }
 

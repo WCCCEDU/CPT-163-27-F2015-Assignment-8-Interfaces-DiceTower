@@ -8,27 +8,30 @@ import java.util.Random;
 public class Fudge implements Die{
     
     // fields
-  private final int numSides;    
+  private final int sides;    
   private int value;      
    
     //constructor
-     public Fudge(){
-    this.numSides = 0;
-    this.value = 0;
+    public Fudge(){
+      this.sides = 0;
+      this.value = 3;
   }
-     //accessors
-  public int getNumSides() {
-    return this.numSides;
-  }
-   @Override
+     
+
+    /**
+     * accessor
+     * @return
+     */
+      @Override
   public int getValue() {
     return this.value;
   }
+   
     //roll method 
   @Override
   public void roll() {
     Random rand = new Random();
-    this.value = rand.nextInt(this.numSides/3);
+    this.value = rand.nextInt(3) - 1;
   } 
 
 } 
