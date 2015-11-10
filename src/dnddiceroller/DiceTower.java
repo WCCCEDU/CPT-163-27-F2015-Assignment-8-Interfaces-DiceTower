@@ -3,6 +3,7 @@ package dnddiceroller;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Dice Tower.
  * A Dice Tower is a tool used by serious gamers use to roll many dice at once.
@@ -13,16 +14,47 @@ import java.util.List;
  * A dice tower will accept a collection of dice and reports their results when
  * they reach the tray at the bottom
  * @author Paul Scarrone
+ * @author Katrina Siffrinn
  */
 public class DiceTower {
-  final int PANEL_COUNT = 3;
-  List<Die> dice;
+       
+  //fields
+  private final int PANEL_COUNT = 3;
+  private final List<NumberedDie> dice;
+  private int trayValue;
 
-  public DiceTower() {
-	this.dice = new ArrayList();
+ 
+   //constructors accept values for fields. 
+    public DiceTower() {
+        this.dice = new ArrayList();
+        this.trayValue = 0;
+   }
+  
+    /**
+     * 
+     * @param dice 
+     */
+    public DiceTower(List dice) {
+        this.dice = dice;
+        this.trayValue = 0;
+  }
+  /**
+   * accessors return values to fields.
+   * @return the value of trayValue.
+   */
+    public int getTrayValue(){
+      return this.trayValue;
   }
   
-  public DiceTower(List dice) {
-	this.dice = dice;
+  //dropDice method simulates die being dropped into a dice tower.
+  public void dropDice(){
+      int i = 0;
+      for(NumberedDie die : dice){
+             dice.stream().forEach((_item)-> {
+                 die.roll();
+            }); 
+             trayValue += dice.get(i).getValue();
+             i++;
+      }
   }
 }
