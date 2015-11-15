@@ -1,0 +1,34 @@
+public class Loaded implements Die {
+
+  public Loaded() {
+    this.numberSides = 6;
+    this.value = 0;
+    this.loadedChance = 2;
+  }
+
+  public int getNumberSides() {
+    return this.numberSides;
+  }
+
+  public int getValue() {
+    return this.value;
+  }
+
+  public int getLoadedChance() {
+    return loadedChance;
+  }
+
+  public int determineRoll() {
+    // Randomlly generate a 0 or a 1 to determine if we roll
+    // or return a loaded number
+    Random randomNumbers = new Random();
+    int chance = randomNumbers.nextInt(this.loadedChance);
+    return chance;
+  } // end determineRoll method
+
+  public void roll() {
+    Random randomNumbers = new Random();
+    this.value = randomNumbers.nextInt(this.numberSides) + 1;
+  } 
+
+} 
