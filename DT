@@ -1,0 +1,43 @@
+ public class DiceTower {
+  final int PANEL_COUNT = 3;
+  List<Die> dice;
+
+  public DiceTower() {
+	this.dice = new ArrayList();
+  }
+  
+  public DiceTower(List dice) {
+	this.dice = dice;
+  }
+}
+
+    private final int PANEL_COUNT = 3;    
+    private List<NumberedDie> dice;               
+   private int trayValue;
+
+    public DiceTower() {
+        this.dice = new ArrayList(); // 
+        this.trayValue = 0;
+    }
+
+    public DiceTower(List dice) {
+        this.dice = dice; // 
+        this.trayValue = 0;
+    }
+
+    public int getTrayValue() {
+        return this.trayValue;
+    }
+
+    public void dropDice() {
+        
+        for (int panels = 0; panels < PANEL_COUNT; panels++) {
+            this.dice.stream().forEach((die) -> {
+                die.roll();
+            });
+        } 
+       
+       
+        this.dice.stream().forEach((die) -> {
+            this.trayValue += die.getValue();
+       });
