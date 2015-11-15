@@ -1,0 +1,22 @@
+public class Fudge implements Die{
+
+  public Fudge(){
+    this.numberSides = 6;
+    this.value = 0;
+  }
+
+  public int getNumberSides() {
+    return this.numberSides;
+  }
+
+  public int getValue() {
+    return this.value;
+  }
+
+ 
+  public void roll() {
+    Random randomNumbers = new Random();
+    this.value = randomNumbers.nextInt(this.numberSides/2) - 1;
+  } 
+
+}
